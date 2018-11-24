@@ -26,7 +26,6 @@ class SessionController {
   }
 
   async destroy (req, res) {
-    console.log('passei no detroy')
     await req.session.destroy()
     res.clearCookie('root')
     return res.redirect('/')

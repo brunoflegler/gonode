@@ -6,12 +6,12 @@ const upload = require('multer')(multerConfig)
 const UserController = require('./app/controllers/UserController')
 const SessionController = require('./app/controllers/SessionController')
 const authMiddleware = require('./app/middlewares/auth')
-// const guestMiddleware = require('./app/middlewares/guest')
+const guestMiddleware = require('./app/middlewares/guest')
 
-Router.get('/', SessionController.create)
+Router.get('/', guestMiddleware, SessionController.create)
 Router.post('/signin', SessionController.store)
 
-Router.get('/signup', UserController.create)
+Router.get('/signup', guestMiddleware, UserController.create)
 Router.post('/signup', upload.single('avatar'), UserController.store)
 
 Router.use('/app', authMiddleware)
