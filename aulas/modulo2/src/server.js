@@ -1,8 +1,12 @@
 const express = require('express')
 const session = require('express-session')
-const FileStore = require('session-file-store')(session)
+// const FileStore = require('session-file-store')(session)
+const FileRedis = require('connect-redis')(session)
 const nunjucks = require('nunjucks')
 const path = require('path')
+const flash = require('connect-flash')
+
+const messageMiddleware = require('./app/middlewares/message')
 
 class App {
   constructor () {
@@ -15,15 +19,20 @@ class App {
 
   middlewares () {
     this.express.use(express.urlencoded({ extended: false }))
+    this.express.use(flash())
     this.express.use(
       session({
         name: 'root',
         secret: 'MyAppSecret',
         resave: true,
-        saveUninitialized: true,
-        store: new FileStore({
-          path: path.resolve(__dirname, '..', 'tmp', 'sessions')
-        })
+        // store: new FileStore({
+        //   path: path.resolve(__dirname, '..', 'tmp', 'sessions')
+        // }),
+        store: new FileRedis({
+          host: '127.0.0.1',
+          port: '6379'
+        }),
+        saveUninitialized: true
       })
     )
   }
