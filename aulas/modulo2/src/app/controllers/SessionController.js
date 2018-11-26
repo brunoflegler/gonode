@@ -27,6 +27,7 @@ class SessionController {
 
     req.session.user = user
 
+    if (user.provider) return res.redirect('/app/haircutter/dashboard')
     return res.redirect('/app/dashboard')
   }
 

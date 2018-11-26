@@ -9,6 +9,7 @@ const DashboardController = require('./app/controllers/DashboardController')
 const FileController = require('./app/controllers/FileController')
 const AppointmentController = require('./app/controllers/AppointmentController')
 const AvailableController = require('./app/controllers/AvailableController')
+const HaircutterController = require('./app/controllers/HaircutterController')
 
 const authMiddleware = require('./app/middlewares/auth')
 const guestMiddleware = require('./app/middlewares/guest')
@@ -31,5 +32,7 @@ Router.get('/files/:file', FileController.show)
 Router.get('/app/appointments/new/:provider', AppointmentController.create)
 Router.post('/app/appointments/new/:provider', AppointmentController.store)
 Router.get('/app/available/:provider', AvailableController.index)
+
+Router.get('/app/haircutter/dashboard', HaircutterController.index)
 
 module.exports = Router

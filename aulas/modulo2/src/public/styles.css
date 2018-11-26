@@ -226,6 +226,59 @@ ul.providers {
   color: #fff;
 }
 
+ul.appointments {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.appointment {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.appointment div.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.appointment div.avatar img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.appointment div.schedule {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+}
+
+.appointment div.schedule strong {
+  color: #444;
+}
+
+.appointment div.schedule span {
+  color: #999;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.appointment a {
+  background: #7159c1;
+  padding: 5px 10px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 4px;
+  color: #fff;
+}
+
 .alert {
   width: 100%;
   padding: 8px 15px;

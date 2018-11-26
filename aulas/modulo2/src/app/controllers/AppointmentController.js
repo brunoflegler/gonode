@@ -18,8 +18,6 @@ class AppointmentController {
       date
     }
 
-    console.log(appointment)
-
     await Appointment.create(appointment)
 
     return res.redirect('/app/dashboard')
