@@ -6,8 +6,6 @@ const nunjucks = require('nunjucks')
 const path = require('path')
 const flash = require('connect-flash')
 
-const messageMiddleware = require('./app/middlewares/message')
-
 class App {
   constructor () {
     this.express = express()
