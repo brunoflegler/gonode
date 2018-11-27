@@ -2,6 +2,8 @@ const jwt = require('jsonwebtoken')
 const authConfig = require('../../config/auth')
 const { promisify } = require('util')
 
+const User = require('../models/User')
+
 module.exports = async (req, res, next) => {
   const authHeader = req.headers.authorization
 
@@ -14,7 +16,13 @@ module.exports = async (req, res, next) => {
   try {
     const decoded = await promisify(jwt.verify)(token, authConfig.secret)
 
-    req.user = { id: decoded.id }
+    const user = await User.findById(decoded.id)
+
+    if (!user) {
+      return res.status(401).json({ error: 'User not found' })
+    }
+
+    req.user = { id: user.id }
 
     next()
   } catch (error) {

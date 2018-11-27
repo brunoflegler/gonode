@@ -1,8 +1,8 @@
 module.exports = {
   uri: {
-    host: '127.0.0.1',
-    port: '27017',
-    database: 'gonodemodule3'
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    database: process.env.DB_NAME
   },
   options: {
     useCreateIndex: true,

@@ -21,7 +21,7 @@ class AdController {
       filters.title = new RegExp(query.title, 'i')
     }
 
-    console.log(filters)
+    filters.purchasedBy = null
 
     const ads = await Ad.paginate(filters, {
       page: req.query.page || 1,
