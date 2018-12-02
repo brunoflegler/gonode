@@ -3,13 +3,27 @@ const Purchase = require('../models/Purchase')
 
 class AcceptController {
   async accept (req, res) {
-    const purchase = await Purchase.findById(req.params.id).populate('ad')
-    const ad = await Ad.findById(purchase.ad._id)
+    console.log(req.params.id)
+    const purchase = await Purchase.findById(req.params.id)
 
-    ad.purchasedBy = purchase._id
-    ad.save()
+    if (!purchase) {
+      res.status(400).json({ error: 'Purchase not found' })
+    }
 
-    res.send()
+    purchase.sold_at = new Date()
+    purchase.save()
+
+    const update = {
+      purchasedBy: purchase._id
+    }
+
+    // console.log(update)
+
+    const ad = await Ad.findByIdAndUpdate(purchase.ad, update, {
+      new: true
+    })
+
+    return res.json(ad)
   }
 }
 

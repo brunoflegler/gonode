@@ -29,7 +29,9 @@ class PurchaseController {
       ad: advertiment,
       user,
       content
-    }).save()
+    })
+      .priority('normal')
+      .save()
 
     res.json(purchase)
   }
