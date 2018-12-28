@@ -3,13 +3,13 @@ const Purchase = require('../models/Purchase')
 
 class AcceptController {
   async accept (req, res) {
-    const purchase = await Purchase.findById(req.params.id).populate('ad')
-    const ad = await Ad.findById(purchase.ad._id)
-
-    ad.purchasedBy = purchase._id
-    ad.save()
-
-    res.send()
+    const purchase = await Purchase.findById(req.params.id)
+    const ad = await Ad.findByIdAndUpdate(
+      purchase.ad,
+      { purchasedBy: purchase._id },
+      { new: true }
+    )
+    return res.json(ad)
   }
 }
 
