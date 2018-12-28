@@ -23,14 +23,14 @@ class HaircutterController {
       include: ['user']
     })
 
-    appointments = appointments.map(a => {
+    /* appointments = appointments.map(a => {
       const dateFormat = moment(a.date).format('DD/MM/YYYY HH:mm')
 
       return {
         dateFormat,
         ...a
       }
-    })
+    }) */
 
     res.render('haircutter/dashboard', { appointments })
   }

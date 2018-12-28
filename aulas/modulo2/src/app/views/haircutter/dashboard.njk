@@ -14,7 +14,7 @@
           </div>
           <div class="schedule">
             <strong>{{appointment.user.name}}</strong>
-            <span>{{appointment.dateFormat}}
+            <span>{{appointment.date | date("HH:mm")}}
           </div>
         </li>
       {% endfor%}

@@ -1792,13 +1792,13 @@ mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0:
   dependencies:
     minimist "0.0.8"
 
-moment-timezone@^0.5.14:
+moment-timezone@^0.5.14, moment-timezone@^0.5.17:
   version "0.5.23"
   resolved "https://registry.yarnpkg.com/moment-timezone/-/moment-timezone-0.5.23.tgz#7cbb00db2c14c71b19303cb47b0fb0a6d8651463"
   dependencies:
     moment ">= 2.9.0"
 
-"moment@>= 2.9.0", moment@^2.20.0:
+"moment@>= 2.9.0", moment@^2.20.0, moment@^2.9.0:
   version "2.22.2"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66"
 
@@ -1973,6 +1973,27 @@ npmlog@^4.0.2:
 number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
+
+nunjucks-date-filter-local@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/nunjucks-date-filter-local/-/nunjucks-date-filter-local-0.1.2.tgz#4081c06b72c4e93fc7daff25bd51a7a2b9d23e28"
+  integrity sha1-QIHAa3LE6T/H2v8lvVGnornSPig=
+  dependencies:
+    moment "^2.9.0"
+
+nunjucks-date-filter@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/nunjucks-date-filter/-/nunjucks-date-filter-0.1.1.tgz#a936d44d2cc9898d95c6ab7b2aba7084fa60aba6"
+  integrity sha1-qTbUTSzJiY2Vxqt7KrpwhPpgq6Y=
+  dependencies:
+    moment "^2.9.0"
+
+nunjucks-moment-timezone-filter@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/nunjucks-moment-timezone-filter/-/nunjucks-moment-timezone-filter-1.0.1.tgz#d087404080686d17c31ac4a72e52d000a04c28ce"
+  integrity sha512-mP4B3K8qFPn+q18TiLvz6tWAsiHagyCqtEeyBP0vHPd3dsJtjf5OOB44cH2yOQO1VTQHzIqWaH1Oewb2hRnz3w==
+  dependencies:
+    moment-timezone "^0.5.17"
 
 nunjucks@^3.1.4:
   version "3.1.4"
