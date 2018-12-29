@@ -19,6 +19,9 @@ const PurchaseSchema = new mongoose.Schema({
   create_at: {
     type: Date,
     default: Date.now
+  },
+  sold_at: {
+    type: Date
   }
 })
 
