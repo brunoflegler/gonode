@@ -1,0 +1,5 @@
+{
+  "email.required": "O e-mail é obrigatório",
+  "date_event.required": "A data do evento é obrigatória",
+  "date_event.after": "A data do evento não pode ser menor que a data atual"
+}
