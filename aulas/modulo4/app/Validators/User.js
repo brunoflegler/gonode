@@ -16,7 +16,7 @@ class User {
   }
 
   get messages () {
-    return Antl.list('validation')
+    return Antl.forLocale('pt').list('validation')
   }
 }
 
